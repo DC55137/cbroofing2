@@ -30,8 +30,8 @@ export const PATH_PAGE = {
   page404: "/404",
   page500: "/500",
   components: "/components",
-  gallery: "/gallery",
-  testimonials: "/testimonials",
+  gallery: "/coming-soon",
+  testimonials: "/faqs",
 };
 
 export const PATH_DASHBOARD = {

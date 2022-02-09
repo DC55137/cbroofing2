@@ -1,5 +1,5 @@
 // routes
-import { PATH_DOCS, PATH_PAGE } from "../../routes/paths";
+import { PATH_PAGE } from "../../routes/paths";
 
 // components
 import Iconify from "../../components/Iconify";
@@ -31,11 +31,6 @@ const menuConfig = [
     title: "Testimonials",
     icon: <Iconify icon={"ic:outline-reviews"} {...ICON_SIZE} />,
     path: PATH_PAGE.testimonials,
-  },
-  {
-    title: "Documentation",
-    icon: <Iconify icon={"eva:book-open-fill"} {...ICON_SIZE} />,
-    path: PATH_DOCS,
   },
 ];
 

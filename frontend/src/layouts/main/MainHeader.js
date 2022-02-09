@@ -43,6 +43,11 @@ const ToolbarShadowStyle = styled("div")(({ theme }) => ({
   boxShadow: theme.customShadows.z8,
 }));
 
+const Img = styled("img")(({ theme }) => ({
+  width: `150px`,
+  transition: "0.5s",
+}));
+
 // ----------------------------------------------------------------------
 
 export default function MainHeader() {
@@ -61,6 +66,7 @@ export default function MainHeader() {
       <ToolbarStyle
         disableGutters
         sx={{
+          backgroundColor: "white",
           ...(isOffset && {
             ...cssStyles(theme).bgBlur(),
             height: { md: HEADER.MAIN_DESKTOP_HEIGHT - 16 },
@@ -74,11 +80,11 @@ export default function MainHeader() {
             justifyContent: "space-between",
           }}
         >
-          <Logo />
+          <Img
+            src="https://res.cloudinary.com/dddxwdp7v/image/upload/v1644284642/cbroofing/logo_hllzih.png"
+            style={{ ...(isOffset && { width: "100px" }) }}
+          />
 
-          <Label color="info" sx={{ ml: 1 }}>
-            v3.0.0
-          </Label>
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && (
