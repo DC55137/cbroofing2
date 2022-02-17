@@ -1,10 +1,10 @@
 // routes
-import { PATH_DASHBOARD } from './routes/paths';
+import { PATH_DASHBOARD } from "./routes/paths";
 
 // API
 // ----------------------------------------------------------------------
 
-export const HOST_API = process.env.REACT_APP_HOST_API_KEY || '';
+export const HOST_API = process.env.REACT_APP_HOST_API_KEY || "";
 
 export const FIREBASE_API = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -29,7 +29,6 @@ export const AUTH0_API = {
 
 export const MAPBOX_API = process.env.REACT_APP_MAPBOX;
 
-
 // ROOT PATH AFTER LOGIN SUCCESSFUL
 export const PATH_AFTER_LOGIN = PATH_DASHBOARD.general.app; // as '/dashboard/app'
 
@@ -37,8 +36,8 @@ export const PATH_AFTER_LOGIN = PATH_DASHBOARD.general.app; // as '/dashboard/ap
 // ----------------------------------------------------------------------
 
 export const HEADER = {
-  MOBILE_HEIGHT: 64,
-  MAIN_DESKTOP_HEIGHT: 88,
+  MOBILE_HEIGHT: 65,
+  MAIN_DESKTOP_HEIGHT: 110,
   DASHBOARD_DESKTOP_HEIGHT: 92,
   DASHBOARD_DESKTOP_OFFSET_HEIGHT: 92 - 32,
 };
@@ -63,9 +62,9 @@ export const ICON = {
 // ----------------------------------------------------------------------
 
 export const defaultSettings = {
-  themeMode: 'light',
-  themeDirection: 'ltr',
-  themeColorPresets: 'default',
-  themeLayout: 'horizontal',
+  themeMode: "light",
+  themeDirection: "ltr",
+  themeColorPresets: "default",
+  themeLayout: "horizontal",
   themeStretch: false,
 };

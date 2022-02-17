@@ -1,8 +1,8 @@
 // @mui
-import { Box, Container, Typography, Grid } from '@mui/material';
+import { Box, Container, Typography, Grid } from "@mui/material";
 // components
-import Image from '../../components/Image';
-import { MotionInView, varFade } from '../../components/animate';
+import Image from "../../components/Image";
+import { MotionInView, varFade } from "../../components/animate";
 
 // ----------------------------------------------------------------------
 
@@ -12,9 +12,9 @@ export default function AboutVision() {
       <Box
         sx={{
           mb: 10,
-          position: 'relative',
+          position: "relative",
           borderRadius: 2,
-          overflow: 'hidden',
+          overflow: "hidden",
         }}
       >
         <Image
@@ -26,15 +26,22 @@ export default function AboutVision() {
         <Box
           sx={{
             bottom: { xs: 24, md: 80 },
-            width: '100%',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            position: 'absolute',
-            justifyContent: 'center',
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            position: "absolute",
+            justifyContent: "center",
           }}
         >
-          {['logo_amazon', 'logo_hbo', 'logo_ibm', 'logo_lya', 'logo_spotify', 'logo_netflix'].map((logo) => (
+          {[
+            "logo_amazon",
+            "logo_hbo",
+            "logo_ibm",
+            "logo_lya",
+            "logo_spotify",
+            "logo_netflix",
+          ].map((logo) => (
             <MotionInView key={logo} variants={varFade().in}>
               <Image
                 alt={logo}
@@ -52,8 +59,9 @@ export default function AboutVision() {
       <Grid container justifyContent="center">
         <Grid item xs={12} sm={8}>
           <MotionInView variants={varFade().inUp}>
-            <Typography variant="h3" sx={{ textAlign: 'center' }}>
-              Our vision offering the best product nulla vehicula tortor scelerisque ultrices malesuada.
+            <Typography variant="h3" sx={{ textAlign: "center" }}>
+              Our vision offering the best product nulla vehicula tortor
+              scelerisque ultrices malesuada.
             </Typography>
           </MotionInView>
         </Grid>

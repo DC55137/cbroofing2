@@ -20,6 +20,7 @@ export const PATH_AUTH = {
 };
 
 export const PATH_PAGE = {
+  home: "/",
   comingSoon: "/coming-soon",
   maintenance: "/maintenance",
   pricing: "/pricing",
@@ -30,8 +31,8 @@ export const PATH_PAGE = {
   page404: "/404",
   page500: "/500",
   components: "/components",
-  gallery: "/coming-soon",
-  testimonials: "/faqs",
+  gallery: "/gallery",
+  testimonials: "/testimonials",
 };
 
 export const PATH_DASHBOARD = {
@@ -42,6 +43,17 @@ export const PATH_DASHBOARD = {
     analytics: path(ROOTS_DASHBOARD, "/analytics"),
     banking: path(ROOTS_DASHBOARD, "/banking"),
     booking: path(ROOTS_DASHBOARD, "/booking"),
+  },
+  job: {
+    root: path(ROOTS_DASHBOARD, "/jobs"),
+    lead: path(ROOTS_DASHBOARD, "/jobs/lead"),
+    inspect: path(ROOTS_DASHBOARD, "/jobs/inpsect"),
+    schedule: path(ROOTS_DASHBOARD, "/jobs/schedule"),
+    commence: path(ROOTS_DASHBOARD, "/jobs/commence"),
+    completed: path(ROOTS_DASHBOARD, "/jobs/completed"),
+    followup: path(ROOTS_DASHBOARD, "/jobs/followup"),
+    missed: path(ROOTS_DASHBOARD, "/jobs/missed"),
+    all: path(ROOTS_DASHBOARD, "/jobs/all"),
   },
   mail: {
     root: path(ROOTS_DASHBOARD, "/mail"),

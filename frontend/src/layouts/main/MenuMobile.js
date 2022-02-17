@@ -1,24 +1,33 @@
-import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
-import { NavLink as RouterLink, useLocation } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import { NavLink as RouterLink, useLocation } from "react-router-dom";
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Box, List, Link, Drawer, Collapse, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
+import { alpha, styled } from "@mui/material/styles";
+import {
+  Box,
+  List,
+  Link,
+  Drawer,
+  Collapse,
+  ListItemText,
+  ListItemIcon,
+  ListItemButton,
+} from "@mui/material";
 // config
-import { NAVBAR } from '../../config';
+import { NAVBAR } from "../../config";
 // components
-import Logo from '../../components/Logo';
-import Iconify from '../../components/Iconify';
-import Scrollbar from '../../components/Scrollbar';
-import { IconButtonAnimate } from '../../components/animate';
-import { NavSectionVertical } from '../../components/nav-section';
+import Logo from "../../components/Logo";
+import Iconify from "../../components/Iconify";
+import Scrollbar from "../../components/Scrollbar";
+import { IconButtonAnimate } from "../../components/animate";
+import { NavSectionVertical } from "../../components/nav-section";
 
 // ----------------------------------------------------------------------
 
 const ListItemStyle = styled(ListItemButton)(({ theme }) => ({
   ...theme.typography.body2,
   height: NAVBAR.DASHBOARD_ITEM_ROOT_HEIGHT,
-  textTransform: 'capitalize',
+  textTransform: "capitalize",
   color: theme.palette.text.secondary,
 }));
 
@@ -62,11 +71,11 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
         onClick={handleDrawerOpen}
         sx={{
           ml: 1,
-          ...(isHome && { color: 'common.white' }),
-          ...(isOffset && { color: 'text.primary' }),
+          ...(isHome && { color: "common.black" }),
+          ...(isOffset && { color: "text.primary" }),
         }}
       >
-        <Iconify icon={'eva:menu-2-fill'} />
+        <Iconify icon={"eva:menu-2-fill"} />
       </IconButtonAnimate>
 
       <Drawer
@@ -80,7 +89,12 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
 
           <List disablePadding>
             {navConfig.map((link) => (
-              <MenuMobileItem key={link.title} item={link} isOpen={open} onOpen={handleOpen} />
+              <MenuMobileItem
+                key={link.title}
+                item={link}
+                isOpen={open}
+                onOpen={handleOpen}
+              />
             ))}
           </List>
         </Scrollbar>
@@ -112,25 +126,29 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText disableTypography primary={title} />
           <Iconify
-            icon={isOpen ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
+            icon={
+              isOpen
+                ? "eva:arrow-ios-downward-fill"
+                : "eva:arrow-ios-forward-fill"
+            }
             sx={{ width: 16, height: 16, ml: 1 }}
           />
         </ListItemStyle>
 
         <Collapse in={isOpen} timeout="auto" unmountOnExit>
-          <Box sx={{ display: 'flex', flexDirection: 'column-reverse' }}>
+          <Box sx={{ display: "flex", flexDirection: "column-reverse" }}>
             <NavSectionVertical
               navConfig={children}
               sx={{
-                '& .MuiList-root:last-of-type .MuiListItemButton-root': {
+                "& .MuiList-root:last-of-type .MuiListItemButton-root": {
                   height: 200,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  bgcolor: 'background.neutral',
-                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  bgcolor: "background.neutral",
+                  backgroundRepeat: "no-repeat",
                   backgroundImage:
-                    'url(https://minimal-assets-api.vercel.app/assets/illustrations/illustration_dashboard.png)',
-                  '& > *:not(.MuiTouchRipple-root)': { display: 'none' },
+                    "url(https://minimal-assets-api.vercel.app/assets/illustrations/illustration_dashboard.png)",
+                  "& > *:not(.MuiTouchRipple-root)": { display: "none" },
                 },
               }}
             />
@@ -140,9 +158,14 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
     );
   }
 
-  if (title === 'Documentation') {
+  if (title === "Documentation") {
     return (
-      <ListItemStyle href={path} target="_blank" rel="noopener" component={Link}>
+      <ListItemStyle
+        href={path}
+        target="_blank"
+        rel="noopener"
+        component={Link}
+      >
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText disableTypography primary={title} />
       </ListItemStyle>
@@ -153,12 +176,16 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
     <ListItemStyle
       to={path}
       component={RouterLink}
-      end={path === '/'}
+      end={path === "/"}
       sx={{
-        '&.active': {
-          color: 'primary.main',
-          fontWeight: 'fontWeightMedium',
-          bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+        "&.active": {
+          color: "primary.main",
+          fontWeight: "fontWeightMedium",
+          bgcolor: (theme) =>
+            alpha(
+              theme.palette.primary.main,
+              theme.palette.action.selectedOpacity
+            ),
         },
       }}
     >

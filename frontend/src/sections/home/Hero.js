@@ -1,27 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled, { css } from "styled-components/macro";
-import { styled as style } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
+import { Box } from "@mui/material";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import { m } from "framer-motion";
 import { SliderData as slides } from "../home/data/SliderData";
+import { MotionContainer } from "../../components/animate";
+import { LandingContent, Satisfaction } from ".";
 
-const RootStyle = style(m.div)(({ theme }) => ({
-  position: "relative",
-  overflow: "hidden",
-  backgroundColor: theme.palette.grey[400],
-  [theme.breakpoints.up("md")]: {
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100vh",
-    display: "flex",
-    position: "fixed",
-    alignItems: "center",
-  },
-}));
+// ----------------------------------------------------------------------
 
-const HeroOverlayStyle = style(m.img)({
-  zIndex: 9,
+const HeroOverlayStyle = styled(m.img)({
+  zIndex: 5,
   width: "100%",
   height: "100%",
   objectFit: "cover",
@@ -29,14 +18,17 @@ const HeroOverlayStyle = style(m.img)({
   opacity: "0.7",
 });
 
-const HeroSection = style(m.section)(() => ({
+const HeroSection = styled(m.div)(() => ({
+  top: 0,
+  left: 0,
   height: "100vh",
+  width: "100%",
   maxHeight: "1100px",
-  position: "relative",
+  position: "fixed",
   overflow: "hidden",
 }));
 
-const HeroWrapper = style(m.div)(() => ({
+const HeroWrapper = styled(m.div)(() => ({
   width: "100%",
   height: "100%",
   display: "flex",
@@ -46,13 +38,13 @@ const HeroWrapper = style(m.div)(() => ({
   position: "relative",
 }));
 
-const HeroSlide = style("div")(() => ({
+const HeroSlide = styled("div")(() => ({
   zIndex: "1",
   width: "100%",
   height: "100%",
 }));
 
-const HeroSlider = style("div")(() => ({
+const HeroSlider = styled("div")(() => ({
   position: "absolute",
   top: "0",
   left: "0",
@@ -63,7 +55,7 @@ const HeroSlider = style("div")(() => ({
   justifyContent: "center",
 }));
 
-const HeroImage = style("img")(() => ({
+const HeroImage = styled("img")(() => ({
   position: "absolute",
   top: "0",
   left: "0",
@@ -72,7 +64,7 @@ const HeroImage = style("img")(() => ({
   objectFit: "cover",
 }));
 
-const SliderButtons = style("div")(() => ({
+const SliderButtons = styled("div")(() => ({
   position: "absolute",
   bottom: "50px",
   right: "50px",
@@ -80,31 +72,39 @@ const SliderButtons = style("div")(() => ({
   zIndex: "10",
 }));
 
-const arrowButtons = css`
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  cursor: pointer;
-  background: #000d1a;
-  border-radius: 50px;
-  padding: 10px;
-  margin-right: 1rem;
-  user-select: none;
-  transition: 0.3s;
+const PrevArrow = styled(IoArrowBack)(() => ({
+  width: "50px",
+  height: "50px",
+  color: "#fff",
+  cursor: "pointer",
+  background: "#000d1a",
+  borderRadius: "50px",
+  padding: "10px",
+  marginRight: "1rem",
+  userSelect: "none",
+  transition: "0.3s",
+  "&:hover": {
+    background: "#cd853f",
+    transform: "scale(1.05)",
+  },
+}));
 
-  &:hover {
-    background: #cd853f;
-    transform: scale(1.05);
-  }
-`;
-
-const PrevArrow = styled(IoArrowBack)`
-  ${arrowButtons}
-`;
-
-const NextArrow = styled(IoArrowForward)`
-  ${arrowButtons}
-`;
+const NextArrow = styled(IoArrowForward)(() => ({
+  width: "50px",
+  height: "50px",
+  color: "#fff",
+  cursor: "pointer",
+  background: "#000d1a",
+  borderRadius: "50px",
+  padding: "10px",
+  marginRight: "1rem",
+  userSelect: "none",
+  transition: "0.3s",
+  "&:hover": {
+    background: "#cd853f",
+    transform: "scale(1.05)",
+  },
+}));
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -116,7 +116,7 @@ const Hero = () => {
       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
     };
 
-    timeout.current = setTimeout(nextSlide, 200000);
+    timeout.current = setTimeout(nextSlide, 2000);
 
     return function () {
       if (timeout.current) {
@@ -154,36 +154,41 @@ const Hero = () => {
   };
 
   return (
-    <HeroSection>
-      <HeroWrapper>
-        <HeroOverlayStyle
-          alt="overlay"
-          src="https://minimal-assets-api.vercel.app/assets/overlay.svg"
-        />
-        {slides.map((slide, index) => {
-          return (
-            <HeroSlide key={index}>
-              {index === current && (
-                <HeroSlider>
-                  <HeroImage
-                    src={slide.image}
-                    alt={slide.alt}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={fadeAnimation}
-                  />
-                </HeroSlider>
-              )}
-            </HeroSlide>
-          );
-        })}
-        <SliderButtons>
-          <PrevArrow onClick={prevSlide} />
-          <NextArrow onClick={nextSlide} />
-        </SliderButtons>
-      </HeroWrapper>
-    </HeroSection>
+    <MotionContainer>
+      <HeroSection>
+        <HeroWrapper>
+          <HeroOverlayStyle
+            alt="overlay"
+            src="https://minimal-assets-api.vercel.app/assets/overlay.svg"
+          />
+          {slides.map((slide, index) => {
+            return (
+              <HeroSlide key={index}>
+                {index === current && (
+                  <HeroSlider>
+                    <HeroImage
+                      src={slide.image}
+                      alt={slide.alt}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={fadeAnimation}
+                    />
+                  </HeroSlider>
+                )}
+              </HeroSlide>
+            );
+          })}
+          <SliderButtons>
+            <PrevArrow onClick={prevSlide} />
+            <NextArrow onClick={nextSlide} />
+          </SliderButtons>
+        </HeroWrapper>
+      </HeroSection>
+      <LandingContent />
+      <Satisfaction />
+      <Box sx={{ height: "100vh" }} />
+    </MotionContainer>
   );
 };
 

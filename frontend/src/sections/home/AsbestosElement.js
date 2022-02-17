@@ -1,25 +1,29 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from "react-router-dom";
 // @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Button, Container, Typography } from '@mui/material';
+import { alpha, useTheme, styled } from "@mui/material/styles";
+import { Box, Grid, Button, Container, Typography } from "@mui/material";
 // routes
-import { PATH_PAGE } from '../../routes/paths';
+import { PATH_PAGE } from "../../routes/paths";
 // components
-import Image from '../../components/Image';
-import { MotionInView, varFade } from '../../components/animate';
+import Image from "../../components/Image";
+import { MotionInView, varFade } from "../../components/animate";
 
 // ----------------------------------------------------------------------
 
-const RootStyle = styled('div')(({ theme }) => ({
+const image = [
+  "https://res.cloudinary.com/dddxwdp7v/image/upload/v1644473791/cbroofing/Asbestos/Roachedale/RochedaleAfter_j8zc8v.jpg",
+  "https://res.cloudinary.com/dddxwdp7v/image/upload/v1644473779/cbroofing/Asbestos/Roachedale/RoachedaleBefore_mcqw1i.jpg",
+];
+const RootStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(24, 0),
 }));
 
-const ContentStyle = styled('div')(({ theme }) => ({
-  width: '100%',
-  textAlign: 'center',
+const ContentStyle = styled("div")(({ theme }) => ({
+  width: "100%",
+  textAlign: "center",
   marginBottom: theme.spacing(10),
-  [theme.breakpoints.up('md')]: {
-    textAlign: 'left',
+  [theme.breakpoints.up("md")]: {
+    textAlign: "left",
     marginBottom: 0,
   },
 }));
@@ -29,15 +33,16 @@ const ScreenStyle = styled(MotionInView)(({ theme }) => ({
   paddingBottom: 1,
   maxWidth: 160,
   borderRadius: 8,
-  backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 300 : 800],
-  [theme.breakpoints.up('sm')]: {
-    maxWidth: 320,
+  backgroundColor:
+    theme.palette.grey[theme.palette.mode === "light" ? 300 : 800],
+  [theme.breakpoints.up("sm")]: {
+    maxWidth: 500,
     paddingRight: 4,
     borderRadius: 12,
   },
-  '& img': {
+  "& img": {
     borderRadius: 8,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       borderRadius: 12,
     },
   },
@@ -55,44 +60,48 @@ const COMMON = {
 
 const variantScreenLeft = {
   initial: COMMON,
-  animate: { ...COMMON, translateX: '-50%', translateY: 40, opacity: 1 },
-};
-const variantScreenCenter = {
-  initial: COMMON,
-  animate: { ...COMMON, opacity: 1 },
+  animate: { ...COMMON, translateX: "-30%", translateY: 40, opacity: 1 },
 };
 const variantScreenRight = {
   initial: COMMON,
-  animate: { ...COMMON, translateX: '50%', translateY: -40, opacity: 1 },
+  animate: { ...COMMON, translateX: "30%", translateY: -40, opacity: 1 },
 };
 
 // ----------------------------------------------------------------------
 
-export default function HomeHugePackElements() {
+export default function AsbestosElement() {
   const theme = useTheme();
-  const isLight = theme.palette.mode === 'light';
-  const isRTL = theme.direction === 'rtl';
+  const isLight = theme.palette.mode === "light";
+  const isRTL = theme.direction === "rtl";
 
   const screenLeftAnimate = variantScreenLeft;
-  const screenCenterAnimate = variantScreenCenter;
   const screenRightAnimate = variantScreenRight;
 
   return (
     <RootStyle>
       <Container>
         <Grid container spacing={5} justifyContent="center">
-          <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center' }}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={{ display: "flex", alignItems: "center" }}
+          >
             <ContentStyle>
               <MotionInView variants={varFade().inUp}>
-                <Typography component="div" variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-                  Interface Starter Kit
+                <Typography
+                  component="div"
+                  variant="overline"
+                  sx={{ mb: 2, color: "text.disabled" }}
+                >
+                  Asbestos
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFade().inUp}>
                 <Typography variant="h2" sx={{ mb: 3 }}>
-                  Huge pack <br />
-                  of elements
+                  Licensed Asbestos <br />
+                  Removalist
                 </Typography>
               </MotionInView>
 
@@ -100,10 +109,12 @@ export default function HomeHugePackElements() {
                 <Typography
                   sx={{
                     mb: 5,
-                    color: isLight ? 'text.secondary' : 'common.white',
+                    color: isLight ? "text.secondary" : "common.white",
                   }}
                 >
-                  We collected most popular elements. Menu, sliders, buttons, inputs etc. are all here. Just dive in!
+                  Asbestos has weighed on the minds of many Queenslanders. Put
+                  your mind to ease and let the experts remove this hazard from
+                  your home.
                 </Typography>
               </MotionInView>
 
@@ -113,9 +124,9 @@ export default function HomeHugePackElements() {
                   color="inherit"
                   variant="outlined"
                   component={RouterLink}
-                  to={PATH_PAGE.components}
+                  to={PATH_PAGE.gallery}
                 >
-                  View All Components
+                  View Gallery
                 </Button>
               </MotionInView>
             </ContentStyle>
@@ -124,45 +135,44 @@ export default function HomeHugePackElements() {
           <Grid item xs={12} md={8} dir="ltr">
             <Box
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                justifyContent: 'center',
+                display: "flex",
+                alignItems: "center",
+                position: "relative",
+                justifyContent: "center",
               }}
             >
-              {[...Array(3)].map((_, index) => (
+              {[...Array(2)].map((_, index) => (
                 <ScreenStyle
                   key={index}
                   threshold={0.72}
                   variants={{
                     ...(index === 0 && screenLeftAnimate),
-                    ...(index === 1 && screenCenterAnimate),
-                    ...(index === 2 && screenRightAnimate),
+                    ...(index === 1 && screenRightAnimate),
                   }}
-                  transition={{ duration: 0.72, ease: 'easeOut' }}
+                  transition={{ duration: 0.72, ease: "easeOut" }}
                   sx={{
                     boxShadow: `${isRTL ? -80 : 80}px -40px 80px ${alpha(
-                      isLight ? theme.palette.grey[600] : theme.palette.common.black,
+                      isLight
+                        ? theme.palette.grey[600]
+                        : theme.palette.common.black,
                       0.48
                     )}`,
                     ...(index === 0 && {
                       zIndex: 3,
-                      position: 'absolute',
+                      position: "absolute",
                     }),
                     ...(index === 1 && { zIndex: 2 }),
                     ...(index === 2 && {
                       zIndex: 1,
-                      position: 'absolute',
-                      boxShadow: 'none',
+                      position: "absolute",
+                      boxShadow: "none",
                     }),
                   }}
                 >
                   <Image
                     disabledEffect
                     alt={`screen ${index + 1}`}
-                    src={`https://minimal-assets-api.vercel.app/assets/images/home/screen_${
-                      isLight ? 'light' : 'dark'
-                    }_${index + 1}.png`}
+                    src={image[index]}
                   />
                 </ScreenStyle>
               ))}

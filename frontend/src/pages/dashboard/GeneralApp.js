@@ -1,11 +1,11 @@
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Stack } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
+import { Container, Grid, Stack } from "@mui/material";
 // hooks
-import useAuth from '../../hooks/useAuth';
-import useSettings from '../../hooks/useSettings';
+import useAuth from "../../hooks/useAuth";
+import useSettings from "../../hooks/useSettings";
 // components
-import Page from '../../components/Page';
+import Page from "../../components/Page";
 // sections
 import {
   AppWidget,
@@ -18,7 +18,7 @@ import {
   AppWidgetSummary,
   AppCurrentDownload,
   AppTopInstalledCountries,
-} from '../../sections/@dashboard/general/app';
+} from "../../sections/@dashboard/general/app";
 
 // ----------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ export default function GeneralApp() {
 
   return (
     <Page title="General: App">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
+      <Container maxWidth={themeStretch ? false : "xl"}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <AppWelcome displayName={user?.displayName} />
@@ -95,8 +95,19 @@ export default function GeneralApp() {
 
           <Grid item xs={12} md={6} lg={4}>
             <Stack spacing={3}>
-              <AppWidget title="Conversion" total={38566} icon={'eva:person-fill'} chartData={48} />
-              <AppWidget title="Applications" total={55566} icon={'eva:email-fill'} color="warning" chartData={75} />
+              <AppWidget
+                title="Conversion"
+                total={38566}
+                icon={"eva:person-fill"}
+                chartData={48}
+              />
+              <AppWidget
+                title="Applications"
+                total={55566}
+                icon={"eva:email-fill"}
+                color="warning"
+                chartData={75}
+              />
             </Stack>
           </Grid>
         </Grid>

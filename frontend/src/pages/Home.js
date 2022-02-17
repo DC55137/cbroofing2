@@ -5,17 +5,10 @@ import Page from "../components/Page";
 // sections
 import {
   Hero,
-  LandingContent,
-  Satisfaction,
-  HomeHero,
+  HomeTestimonials,
   HomeMinimal,
-  HomeDarkMode,
-  HomeLookingFor,
-  HomeColorPresets,
-  HomePricingPlans,
-  HomeAdvertisement,
-  HomeCleanInterfaces,
-  HomeHugePackElements,
+  SuppliersElement,
+  AsbestosElement,
 } from "../sections/home";
 
 // ----------------------------------------------------------------------
@@ -34,27 +27,14 @@ const ContentStyle = styled("div")(({ theme }) => ({
 
 export default function HomePage() {
   return (
-    <Page title="The starting point for your next project">
+    <Page title="Your Local Roofing Contractor">
       <RootStyle>
         <Hero />
-        <LandingContent />
-        <Satisfaction />
         <ContentStyle>
           <HomeMinimal />
-
-          <HomeHugePackElements />
-
-          <HomeDarkMode />
-
-          <HomeColorPresets />
-
-          <HomeCleanInterfaces />
-
-          <HomePricingPlans />
-
-          <HomeLookingFor />
-
-          <HomeAdvertisement />
+          <SuppliersElement />
+          <AsbestosElement />
+          <HomeTestimonials />
         </ContentStyle>
       </RootStyle>
     </Page>

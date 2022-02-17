@@ -1,4 +1,5 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link as RouterLink } from "react-router-dom";
+
 // @mui
 import { styled, useTheme } from "@mui/material/styles";
 import { Box, Button, AppBar, Toolbar, Container } from "@mui/material";
@@ -9,9 +10,9 @@ import useResponsive from "../../hooks/useResponsive";
 import cssStyles from "../../utils/cssStyles";
 // config
 import { HEADER } from "../../config";
-// components
-import Logo from "../../components/Logo";
-import Label from "../../components/Label";
+
+// routes
+import { PATH_AUTH } from "../../routes/paths";
 //
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
@@ -45,7 +46,10 @@ const ToolbarShadowStyle = styled("div")(({ theme }) => ({
 
 const Img = styled("img")(({ theme }) => ({
   width: `150px`,
-  transition: "0.5s",
+  transition: theme.transitions.create(["width"], {
+    easing: theme.transitions.easing.easeInOut,
+    duration: theme.transitions.duration.shorter,
+  }),
 }));
 
 // ----------------------------------------------------------------------
@@ -69,7 +73,7 @@ export default function MainHeader() {
           backgroundColor: "white",
           ...(isOffset && {
             ...cssStyles(theme).bgBlur(),
-            height: { md: HEADER.MAIN_DESKTOP_HEIGHT - 16 },
+            height: { md: HEADER.MAIN_DESKTOP_HEIGHT - 50 },
           }),
         }}
       >
@@ -96,10 +100,9 @@ export default function MainHeader() {
           )}
 
           <Button
+            component={RouterLink}
+            to={PATH_AUTH.login}
             variant="contained"
-            target="_blank"
-            rel="noopener"
-            href="/auth/login"
           >
             login
           </Button>
