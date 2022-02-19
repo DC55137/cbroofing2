@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import Invoice from "./invoice.js";
+import Invoice from "./invoiceModel.js";
+
 const Schema = mongoose.Schema;
 
 const jobSchema = new mongoose.Schema({
@@ -26,6 +27,7 @@ const jobSchema = new mongoose.Schema({
       "schedule",
       "commence",
       "completed",
+      "subcontractors",
       "followup",
       "missed",
     ],

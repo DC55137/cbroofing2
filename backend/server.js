@@ -6,6 +6,7 @@ import morgan from "morgan";
 import cors from "cors";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
+import jobRoutes from "./routes/jobRoutes.js";
 import colors from "colors";
 
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cors()); // Use this after the variable declaration
 
 app.use("/api/galleries", galleryRoutes);
+app.use("/api/jobs", jobRoutes);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
