@@ -1,7 +1,7 @@
 {
-  "name": "@CBMR Company Website",
+  "name": "@cbmr/dc-dev-react",
   "proxy": "http://127.0.0.1:5000",
-  "author": "DC Dev",
+  "author": "dc.dev",
   "version": "3.0.0",
   "description": "Javascript Version",
   "private": true,
