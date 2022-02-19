@@ -27,7 +27,7 @@ export default function GeneralApp() {
 
   return (
     <Page title="General: App">
-      <Container sx={{ my: 10 }}>
+      <Container sx={{ my: 15 }}>
         <Box
           sx={{
             display: "grid",

@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { useEffect } from "react";
 // @mui
-import { Card, Grid, Container, Typography } from "@mui/material";
+import { Card, Grid, Container, Typography, Button } from "@mui/material";
 // redux
 import { useDispatch, useSelector } from "../../redux/store";
 import { getJob, startLoading } from "../../redux/slices/jobs";
@@ -32,6 +33,9 @@ export default function EcommerceProductDetails() {
   return (
     <Page title="Job: Show">
       <Container maxWidth={themeStretch ? false : "lg"} sx={{ mt: "100px" }}>
+        <Button to={`/dashboard/app`} component={RouterLink}>
+          Back Button
+        </Button>
         {job && !isLoading && (
           <>
             <Card>
