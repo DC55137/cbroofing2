@@ -47,7 +47,7 @@ export const PATH_DASHBOARD = {
   job: {
     root: path(ROOTS_DASHBOARD, "/jobs"),
     lead: path(ROOTS_DASHBOARD, "/jobs/lead"),
-    inspect: path(ROOTS_DASHBOARD, "/jobs/inpsect"),
+    inspect: path(ROOTS_DASHBOARD, "/jobs/inspect"),
     schedule: path(ROOTS_DASHBOARD, "/jobs/schedule"),
     commence: path(ROOTS_DASHBOARD, "/jobs/commence"),
     completed: path(ROOTS_DASHBOARD, "/jobs/completed"),

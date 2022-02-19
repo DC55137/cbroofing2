@@ -1,6 +1,23 @@
 const gallery = [
   {
     cover:
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145887/cbroofing/Gallery/Keperra/a8e7ac73-b8ba-4be1-ad3e-91d2bd32ca50_lsqmtn.jpg",
+    images: [
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145895/cbroofing/Gallery/Keperra/713c780f-e8ba-4d1a-bfb4-e8374e1aee9e_lamfd4.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145887/cbroofing/Gallery/Keperra/a8e7ac73-b8ba-4be1-ad3e-91d2bd32ca50_lsqmtn.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145881/cbroofing/Gallery/Keperra/a6e0372a-e325-45ff-830d-a4cddc6d4e83_xvv39r.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145875/cbroofing/Gallery/Keperra/6f425eb2-dfaa-4df8-b70c-fca1f1a83e5f_h9fjmn.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145869/cbroofing/Gallery/Keperra/2e6df964-d219-4e6a-baae-fff8a1e95704_agi8ez.jpg",
+    ],
+    location: "Keperra",
+    date: "18/02/21",
+    duration: 5,
+    description: "Asbestos Roof Replacement",
+    recap:
+      "Not a lot of area of roof to replace but there were a lot of hips and valleys that require a lot of expertise to install correctly. The crew did really well to make sure rain water flow appropriately.",
+  },
+  {
+    cover:
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1644893661/cbroofing/Gallery/Springfield/img5_nvhgih.jpg",
     images: [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1644893661/cbroofing/Gallery/Springfield/img5_nvhgih.jpg",

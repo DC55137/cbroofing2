@@ -1,7 +1,7 @@
 {
-  "name": "@minimal/minimal-kit-react",
+  "name": "@CBMR Company Website",
   "proxy": "http://127.0.0.1:5000",
-  "author": "minimals.cc",
+  "author": "DC Dev",
   "version": "3.0.0",
   "description": "Javascript Version",
   "private": true,

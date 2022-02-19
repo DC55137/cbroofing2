@@ -33,15 +33,15 @@ const navConfig = [
     items: [
       {
         title: "jobs",
-        path: PATH_DASHBOARD.job.root,
-        icon: ICONS.booking,
+        path: PATH_DASHBOARD.user.root,
+        icon: ICONS.user,
         children: [
-          { title: "leads", path: PATH_DASHBOARD.job.leads },
-          { title: "inspect", path: PATH_DASHBOARD.job.inspect },
-          { title: "Schedule", path: PATH_DASHBOARD.user.schedule },
-          { title: "Commence", path: PATH_DASHBOARD.user.commence },
-          { title: "Follow Up", path: PATH_DASHBOARD.user.followup },
-          { title: "Missed", path: PATH_DASHBOARD.user.missed },
+          { title: "leads", path: PATH_DASHBOARD.job.lead },
+          { title: "inspection", path: PATH_DASHBOARD.job.inspect },
+          { title: "schedule", path: PATH_DASHBOARD.job.schedule },
+          { title: "create", path: PATH_DASHBOARD.job.newUser },
+          { title: "edit", path: PATH_DASHBOARD.user.editById },
+          { title: "account", path: PATH_DASHBOARD.user.account },
         ],
       },
       { title: "app", path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
