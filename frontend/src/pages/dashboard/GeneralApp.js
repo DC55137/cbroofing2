@@ -105,48 +105,94 @@ export default function UserList() {
                 </TableContainer>
               </Scrollbar>
             </Card>
-            <h1>Inspections</h1>
-            <Card>
-              <Scrollbar>
-                <TableContainer sx={{ minWidth: 800 }}>
-                  <Table>
-                    <UserListHead
-                      headLabel={TABLE_HEAD}
-                      rowCount={jobs.length}
-                    />
-                    <TableBody>
-                      {jobs
-                        .filter((job) => job.stage === "inspect")
-                        .map((row) => {
-                          const { _id, stage, name, mobile, email, address } =
-                            row;
-                          return (
-                            <TableRow
-                              hover
-                              key={_id}
-                              to={`/dashboard/job/${_id}`}
-                              component={RouterLink}
-                              sx={{ textDecoration: "none" }}
-                            >
-                              <TableCell
-                                sx={{ display: "flex", alignItems: "center" }}
+            <div style={{ margin: "100px 0" }}>
+              <h1>Inspections</h1>
+              <Card>
+                <Scrollbar>
+                  <TableContainer sx={{ minWidth: 800 }}>
+                    <Table>
+                      <UserListHead
+                        headLabel={TABLE_HEAD}
+                        rowCount={jobs.length}
+                      />
+                      <TableBody>
+                        {jobs
+                          .filter((job) => job.stage === "inspect")
+                          .map((row) => {
+                            const { _id, stage, name, mobile, email, address } =
+                              row;
+                            return (
+                              <TableRow
+                                hover
+                                key={_id}
+                                to={`/dashboard/job/${_id}`}
+                                component={RouterLink}
+                                sx={{ textDecoration: "none" }}
                               >
-                                <Typography variant="subtitle2" noWrap>
-                                  {stage}
-                                </Typography>
-                              </TableCell>
-                              <TableCell align="left">{name}</TableCell>
-                              <TableCell align="left">{mobile}</TableCell>
-                              <TableCell align="left">{email}</TableCell>
-                              <TableCell align="left">{address}</TableCell>
-                            </TableRow>
-                          );
-                        })}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </Scrollbar>
-            </Card>
+                                <TableCell
+                                  sx={{ display: "flex", alignItems: "center" }}
+                                >
+                                  <Typography variant="subtitle2" noWrap>
+                                    {stage}
+                                  </Typography>
+                                </TableCell>
+                                <TableCell align="left">{name}</TableCell>
+                                <TableCell align="left">{mobile}</TableCell>
+                                <TableCell align="left">{email}</TableCell>
+                                <TableCell align="left">{address}</TableCell>
+                              </TableRow>
+                            );
+                          })}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </Scrollbar>
+              </Card>
+            </div>
+            <div style={{ margin: "100px 0" }}>
+              <h1>Schedule</h1>
+              <Card>
+                <Scrollbar>
+                  <TableContainer sx={{ minWidth: 800 }}>
+                    <Table>
+                      <UserListHead
+                        headLabel={TABLE_HEAD}
+                        rowCount={jobs.length}
+                      />
+                      <TableBody>
+                        {jobs
+                          .filter((job) => job.stage === "schedule")
+                          .map((row) => {
+                            const { _id, stage, name, mobile, email, address } =
+                              row;
+                            return (
+                              <TableRow
+                                hover
+                                key={_id}
+                                to={`/dashboard/job/${_id}`}
+                                component={RouterLink}
+                                sx={{ textDecoration: "none" }}
+                              >
+                                <TableCell
+                                  sx={{ display: "flex", alignItems: "center" }}
+                                >
+                                  <Typography variant="subtitle2" noWrap>
+                                    {stage}
+                                  </Typography>
+                                </TableCell>
+                                <TableCell align="left">{name}</TableCell>
+                                <TableCell align="left">{mobile}</TableCell>
+                                <TableCell align="left">{email}</TableCell>
+                                <TableCell align="left">{address}</TableCell>
+                              </TableRow>
+                            );
+                          })}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </Scrollbar>
+              </Card>
+            </div>
           </>
         )}
       </Container>
