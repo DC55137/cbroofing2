@@ -104,7 +104,7 @@ export default function ProductDetailsCarousel({ product }) {
             {...settings1}
             asNavFor={nav2}
             ref={slider1}
-            // swipeToSlide={true}
+            swipeToSlide={true}
           >
             {product.images.map((img) => (
               <Image
