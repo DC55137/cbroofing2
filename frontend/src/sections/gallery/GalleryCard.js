@@ -11,16 +11,6 @@ import Image from "src/components/Image";
 
 // ----------------------------------------------------------------------
 
-const OverlayStyle = styled("div")(({ theme }) => ({
-  ...cssStyles().bgBlur({ blur: 2, color: theme.palette.primary.darker }),
-  top: 0,
-  zIndex: 8,
-  content: "''",
-  width: "100%",
-  height: "100%",
-  position: "absolute",
-}));
-
 // ----------------------------------------------------------------------
 
 GalleryCard.propTypes = {
@@ -34,7 +24,6 @@ export default function GalleryCard({ gallery }) {
     <Card sx={{ textAlign: "center" }}>
       <CardActionArea to={`/gallery/${_id}`} component={RouterLink}>
         <Box sx={{ position: "relative" }}>
-          <OverlayStyle />
           <Image src={cover} alt={cover} ratio="16/9" />
         </Box>
 
