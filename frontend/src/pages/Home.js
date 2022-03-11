@@ -27,7 +27,7 @@ const ContentStyle = styled("div")(({ theme }) => ({
 
 export default function HomePage() {
   return (
-    <Page title="Metal Roofing">
+    <Page title="CBMR | Gold Coast Brisbane Metal Roofing">
       <RootStyle>
         <Hero />
         <ContentStyle>

@@ -1,6 +1,26 @@
 const gallery = [
   {
     cover:
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979416/cbroofing/Gallery/Mermaid%20Beach/1f9f4a5c-1381-48a8-b6aa-b77cc271b1e9_gnfnjv.jpg",
+    images: [
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979419/cbroofing/Gallery/Mermaid%20Beach/2a76521d-f866-4652-a3c7-f29de7fe42b2_hkxqyc.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979417/cbroofing/Gallery/Mermaid%20Beach/87276143-61f9-4d16-ba07-198037b0535d_prqved.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979416/cbroofing/Gallery/Mermaid%20Beach/49637af5-92d0-4917-bc7e-88b75afc0b06_b5h8ea.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979415/cbroofing/Gallery/Mermaid%20Beach/82580f8a-0d39-4f11-8dc4-281980853438_ncqyp5.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979416/cbroofing/Gallery/Mermaid%20Beach/1f9f4a5c-1381-48a8-b6aa-b77cc271b1e9_gnfnjv.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979416/cbroofing/Gallery/Mermaid%20Beach/25cde7f9-b389-4b61-9fc9-b076433e0280_zwxyov.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979416/cbroofing/Gallery/Mermaid%20Beach/40f451d4-5160-4941-8546-efe47b9620fa_drrock.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979415/cbroofing/Gallery/Mermaid%20Beach/613a37b0-35a7-4d10-a7fa-d55836a38f28_ywbqbe.jpg",
+    ],
+    location: "Mermaid Beach",
+    date: "11/03/22",
+    duration: 5,
+    description: "Asbestos Roof Replacement",
+    recap:
+      "Another big working week for the crew. A lot of asbestos to remove for this job. The asbestos was removed in a timely fashion ensuring the safety of the tenants.",
+  },
+  {
+    cover:
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145887/cbroofing/Gallery/Keperra/a8e7ac73-b8ba-4be1-ad3e-91d2bd32ca50_lsqmtn.jpg",
     images: [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145895/cbroofing/Gallery/Keperra/713c780f-e8ba-4d1a-bfb4-e8374e1aee9e_lamfd4.jpg",
@@ -10,7 +30,7 @@ const gallery = [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1645145869/cbroofing/Gallery/Keperra/2e6df964-d219-4e6a-baae-fff8a1e95704_agi8ez.jpg",
     ],
     location: "Keperra",
-    date: "18/02/21",
+    date: "18/02/22",
     duration: 5,
     description: "Asbestos Roof Replacement",
     recap:

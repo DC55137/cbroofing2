@@ -49,7 +49,7 @@ export default function EcommerceProductDetails() {
   const { gallery, isLoading } = useSelector((state) => state.gallery);
 
   return (
-    <Page title="Gallery: Project">
+    <Page title="Gallery: Project | Gold Coast Brisbane Metal Roofing">
       <Container maxWidth={themeStretch ? false : "lg"} sx={{ mt: "100px" }}>
         {gallery && !isLoading && (
           <>
@@ -67,7 +67,7 @@ export default function EcommerceProductDetails() {
                       display: "block",
                     }}
                   >
-                    Decription
+                    Description
                   </Typography>
                   <Typography
                     sx={{

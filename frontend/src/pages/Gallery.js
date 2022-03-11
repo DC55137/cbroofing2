@@ -31,7 +31,7 @@ export default function Contact() {
   }, [dispatch]);
 
   return (
-    <Page title="Gallery">
+    <Page title="Gallery | Gold Coast Brisbane Metal Roofing">
       <RootStyle>
         <GalleryHero />
         <Container sx={{ my: 10 }}>

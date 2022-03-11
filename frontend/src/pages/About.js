@@ -19,7 +19,7 @@ const RootStyle = styled("div")(({ theme }) => ({
 
 export default function About() {
   return (
-    <Page title="About us">
+    <Page title="About us | Gold Coast Brisbane Metal Roofing">
       <RootStyle>
         <AboutHero />
 
