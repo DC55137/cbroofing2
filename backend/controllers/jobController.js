@@ -26,5 +26,20 @@ const getJobById = asyncHandler(async (req, res) => {
     throw new Error("job not found");
   }
 });
+// @desc    Create single Job
+// @route   Post /api/job/
+// @access  Public
+const newJob = asyncHandler(async (req, res) => {
+  var job = await Job.find().sort({ number: -1 });
+  var highNumber = Number(job[0].number) + 1;
+  console.log(highNumber);
 
-export { getJobs, getJobById };
+  req.body.number = highNumber;
+  console.log(req.body);
+  const newJob = new Job(req.body);
+  await newJob.save();
+  newJob.name = newJob.name.replace(/\s+/g, "");
+  res.status(201).json(newJob);
+});
+
+export { getJobs, getJobById, newJob };

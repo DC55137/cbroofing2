@@ -1,7 +1,11 @@
+import { Link as RouterLink } from "react-router-dom";
 import React from "react";
 import { m } from "framer-motion";
+import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { MotionContainer, varFade } from "../../components/animate";
+import Iconify from "../../components/Iconify";
+import { PATH_PAGE } from "../../routes/paths";
 
 const HeroContent = styled(m.div)(({ theme }) => ({
   position: "fixed",
@@ -12,7 +16,6 @@ const HeroContent = styled(m.div)(({ theme }) => ({
   paddingBottom: "100px",
   boxShadow: "0px 20px #01539a",
   textTransform: "uppercase",
-  opacity: "0.8",
   paddingLeft: "50px",
   transition: "all 1s",
   "& h1": {
@@ -42,6 +45,18 @@ const LandingContent = () => {
           Metal Roofing
         </m.h1>
         <br />
+        <Button
+          variant="outlined"
+          color="inherit"
+          size="large"
+          component={RouterLink}
+          to={PATH_PAGE.about}
+          endIcon={
+            <Iconify icon={"ic:round-arrow-right-alt"} width={24} height={24} />
+          }
+        >
+          Get A free quote
+        </Button>
       </HeroContent>
     </MotionContainer>
   );

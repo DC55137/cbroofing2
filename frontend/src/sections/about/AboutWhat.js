@@ -1,3 +1,4 @@
+import { Link as RouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
 // @mui
 import { alpha, useTheme, styled } from "@mui/material/styles";
@@ -9,6 +10,8 @@ import {
   Typography,
   LinearProgress,
 } from "@mui/material";
+//ROUTES
+import { PATH_PAGE } from "../../routes/paths";
 // hooks
 import useResponsive from "../../hooks/useResponsive";
 // utils
@@ -104,6 +107,8 @@ export default function AboutWhat() {
                 variant="outlined"
                 color="inherit"
                 size="large"
+                component={RouterLink}
+                to={PATH_PAGE.gallery}
                 endIcon={
                   <Iconify
                     icon={"ic:round-arrow-right-alt"}

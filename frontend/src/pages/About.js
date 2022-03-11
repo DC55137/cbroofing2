@@ -1,9 +1,10 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import { Divider } from "@mui/material";
+import { Divider, Grid, Container } from "@mui/material";
 // components
 import Page from "../components/Page";
 import { AboutHero, AboutWhat, AboutTestimonials } from "../sections/about";
+import { ContactForm } from "src/sections/contact";
 
 // ----------------------------------------------------------------------
 
@@ -22,6 +23,9 @@ export default function About() {
       <RootStyle>
         <AboutHero />
 
+        <Container sx={{ my: 10 }}>
+          <ContactForm />
+        </Container>
         <AboutWhat />
 
         <Divider

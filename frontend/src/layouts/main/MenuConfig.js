@@ -23,14 +23,14 @@ const menuConfig = [
     path: PATH_PAGE.gallery,
   },
   {
-    title: "About Us",
-    icon: <Iconify icon={"mdi:home-roof"} {...ICON_SIZE} />,
-    path: PATH_PAGE.about,
-  },
-  {
     title: "Testimonials",
     icon: <Iconify icon={"ic:outline-reviews"} {...ICON_SIZE} />,
     path: PATH_PAGE.testimonials,
+  },
+  {
+    title: "Contact Us",
+    icon: <Iconify icon={"mdi:home-roof"} {...ICON_SIZE} />,
+    path: PATH_PAGE.about,
   },
 ];
 

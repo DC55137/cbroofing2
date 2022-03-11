@@ -12,6 +12,7 @@ const initialState = {
   error: null,
   jobs: [],
   job: null,
+  newJob: null,
   sortBy: null,
 };
 
@@ -35,11 +36,16 @@ const slice = createSlice({
       state.isLoading = false;
       state.jobs = action.payload;
     },
-
-    // GET PRODUCT
+    // GET PRODUCTS
     getJobSuccess(state, action) {
       state.isLoading = false;
       state.job = action.payload;
+    },
+
+    // CREATE JOB
+    createJobSuccess(state, action) {
+      state.isLoading = false;
+      state.newJob = action.payload;
     },
   },
 });
@@ -47,7 +53,13 @@ const slice = createSlice({
 // Reducer
 export default slice.reducer;
 
-export const { startLoading } = slice.actions;
+export const {
+  startLoading,
+  hasError,
+  getJobSuccess,
+  getJobsSuccess,
+  createJobSuccess,
+} = slice.actions;
 // ----------------------------------------------------------------------
 
 export function getJobs() {
@@ -72,6 +84,19 @@ export function getJob(id) {
         params: { id },
       });
       dispatch(slice.actions.getJobSuccess(response.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function createJob(job) {
+  return async () => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.post("/api/jobs", job);
+      dispatch(slice.actions.createJobSuccess(response.data));
+      console.log(response.data);
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
