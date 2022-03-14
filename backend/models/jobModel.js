@@ -9,8 +9,18 @@ const jobSchema = new mongoose.Schema({
     unique: true,
   },
   name: String,
-  forChris: Boolean,
-  good: Boolean,
+  forChris: {
+    type: Boolean,
+    default: false,
+  },
+  good: {
+    type: Boolean,
+    default: false,
+  },
+  discuss: {
+    type: Boolean,
+    default: false,
+  },
   images: Array,
   price: Number,
   mobile: String,
