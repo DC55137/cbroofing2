@@ -42,4 +42,22 @@ const newJob = asyncHandler(async (req, res) => {
   res.status(201).json(newJob);
 });
 
-export { getJobs, getJobById, newJob };
+// @desc    Create single Job
+// @route   Post /api/job/
+// @access  Public
+const updateJob = asyncHandler(async (req, res) => {
+  const { id } = req.query;
+  const job = await Job.findByIdAndUpdate(id, req.body, {
+    runValidators: true,
+    new: true,
+    useFindAndModify: false,
+  });
+  job.forChris = false;
+  await job.save();
+  if (!job) {
+    throw new expressError("Job not found", 404);
+  }
+  res.status(201).json(job);
+});
+
+export { getJobs, getJobById, newJob, updateJob };

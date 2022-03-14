@@ -47,6 +47,11 @@ const slice = createSlice({
       state.isLoading = false;
       state.newJob = action.payload;
     },
+    // UPDATE JOB
+    updateJobSuccess(state, action) {
+      state.isLoading = false;
+      state.job = action.payload;
+    },
   },
 });
 
@@ -95,6 +100,21 @@ export function createJob(job) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.post("/api/jobs", job);
+      dispatch(slice.actions.createJobSuccess(response.data));
+      console.log(response.data);
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function updateJob(id, good) {
+  return async () => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.put("/api/jobs/", good, {
+        params: { id },
+      });
       dispatch(slice.actions.createJobSuccess(response.data));
       console.log(response.data);
     } catch (error) {

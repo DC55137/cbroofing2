@@ -74,7 +74,7 @@ export default function Router() {
           path: "jobs",
           children: [
             {
-              element: <Navigate to="/dashboard/jobs/all" replace />,
+              element: <Navigate to="/dashboard/jobs" replace />,
               index: true,
             },
             { path: "all", element: <JobList /> },

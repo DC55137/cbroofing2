@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import { useEffect } from "react";
 // @mui
 import { Card, Grid, Container, Typography, Button } from "@mui/material";
 // redux
 import { useDispatch, useSelector } from "../../redux/store";
-import { getJob, startLoading } from "../../redux/slices/jobs";
+import { getJob, startLoading, updateJob } from "../../redux/slices/jobs";
 
 // hooks
 import useSettings from "../../hooks/useSettings";
@@ -15,13 +15,16 @@ import Page from "../../components/Page";
 import { SkeletonProduct } from "../../components/skeleton";
 // sections
 import { ProductDetailsCarousel } from "../../sections/@dashboard/e-commerce/product-details";
+import { PATH_DASHBOARD, PATH_PAGE } from "../../routes/paths";
 
 // ----------------------------------------------------------------------
 
 export default function EcommerceProductDetails() {
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id = "" } = useParams();
+  console.log(id);
 
   useEffect(() => {
     dispatch(startLoading());
@@ -30,10 +33,33 @@ export default function EcommerceProductDetails() {
 
   const { job, isLoading } = useSelector((state) => state.jobs);
 
+  const onGoodHandler = () => {
+    let good = {
+      good: true,
+      forChris: false,
+    };
+    dispatch(updateJob(id, good));
+    navigate(PATH_DASHBOARD.general.app);
+  };
+  const onBadHandler = () => {
+    let good = {
+      discuss: true,
+      forChris: false,
+    };
+    dispatch(updateJob(id, good));
+    navigate(PATH_DASHBOARD.general.app);
+  };
+
   return (
     <Page title="Job: Show">
-      <Container maxWidth={themeStretch ? false : "lg"} sx={{ mt: "100px" }}>
-        <Button to={`/dashboard/app`} component={RouterLink}>
+      <Container maxWidth={themeStretch ? false : "lg"} sx={{ mt: "120px" }}>
+        <Button
+          to={`/dashboard/app`}
+          component={RouterLink}
+          size="large"
+          variant="contained"
+          sx={{ my: "20px" }}
+        >
           Back Button
         </Button>
         {job && !isLoading && (
@@ -82,6 +108,24 @@ export default function EcommerceProductDetails() {
                   >
                     {job.notes}
                   </Typography>
+                  <Button
+                    onClick={onGoodHandler}
+                    size="large"
+                    variant="contained"
+                    color="primary"
+                    sx={{ m: "20px 20px" }}
+                  >
+                    Good
+                  </Button>
+                  <Button
+                    onClick={onBadHandler}
+                    size="large"
+                    variant="contained"
+                    color="error"
+                    sx={{ m: "20px 20px" }}
+                  >
+                    To Discuss
+                  </Button>
                 </Grid>
               </Grid>
             </Card>

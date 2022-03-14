@@ -33,6 +33,7 @@ export const PATH_PAGE = {
   components: "/components",
   gallery: "/gallery",
   testimonials: "/testimonials",
+  jobs: "/dashboard/jobs/",
 };
 
 export const PATH_DASHBOARD = {
@@ -44,17 +45,7 @@ export const PATH_DASHBOARD = {
     banking: path(ROOTS_DASHBOARD, "/banking"),
     booking: path(ROOTS_DASHBOARD, "/booking"),
   },
-  job: {
-    root: path(ROOTS_DASHBOARD, "/jobs"),
-    lead: path(ROOTS_DASHBOARD, "/jobs/lead"),
-    inspect: path(ROOTS_DASHBOARD, "/jobs/inspect"),
-    schedule: path(ROOTS_DASHBOARD, "/jobs/schedule"),
-    commence: path(ROOTS_DASHBOARD, "/jobs/commence"),
-    completed: path(ROOTS_DASHBOARD, "/jobs/completed"),
-    followup: path(ROOTS_DASHBOARD, "/jobs/followup"),
-    missed: path(ROOTS_DASHBOARD, "/jobs/missed"),
-    all: path(ROOTS_DASHBOARD, "/jobs/all"),
-  },
+  job: path(ROOTS_DASHBOARD, "/jobs"),
   mail: {
     root: path(ROOTS_DASHBOARD, "/mail"),
     all: path(ROOTS_DASHBOARD, "/mail/all"),
