@@ -71,6 +71,26 @@ export default function EcommerceProductDetails() {
                 </Grid>
                 <Grid item xs={12} md={6} lg={5}>
                   <Typography
+                    variant="h4"
+                    sx={{
+                      mt: 2,
+                      mb: 1,
+                      display: "block",
+                    }}
+                  >
+                    {job.name}
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      mt: 2,
+                      mb: 1,
+                      display: "block",
+                    }}
+                  >
+                    {job.address}
+                  </Typography>
+                  <Typography
                     variant="overline"
                     sx={{
                       mt: 2,
