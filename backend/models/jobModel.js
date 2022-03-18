@@ -11,15 +11,15 @@ const jobSchema = new mongoose.Schema({
   name: String,
   forChris: {
     type: Boolean,
-    default: false,
   },
   good: {
     type: Boolean,
-    default: false,
+  },
+  highlight: {
+    type: Boolean,
   },
   discuss: {
     type: Boolean,
-    default: false,
   },
   images: Array,
   price: Number,
@@ -43,6 +43,7 @@ const jobSchema = new mongoose.Schema({
       "subcontractors",
       "followup",
       "missed",
+      "discuss",
     ],
     default: "lead",
   },

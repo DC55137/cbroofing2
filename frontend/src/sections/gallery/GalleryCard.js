@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 // @mui
-import { styled } from "@mui/material/styles";
+
 import { Link as RouterLink } from "react-router-dom";
 import { Box, Card, Divider, Typography, CardActionArea } from "@mui/material";
 // utils
-import cssStyles from "src/utils/cssStyles";
+
 import { fShortenNumber } from "src/utils/formatNumber";
 // components
 import Image from "src/components/Image";

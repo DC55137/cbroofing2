@@ -15,7 +15,7 @@ import Page from "../../components/Page";
 import { SkeletonProduct } from "../../components/skeleton";
 // sections
 import { ProductDetailsCarousel } from "../../sections/@dashboard/e-commerce/product-details";
-import { PATH_DASHBOARD, PATH_PAGE } from "../../routes/paths";
+import { PATH_DASHBOARD } from "../../routes/paths";
 
 // ----------------------------------------------------------------------
 
@@ -44,7 +44,8 @@ export default function EcommerceProductDetails() {
   const onBadHandler = () => {
     let good = {
       discuss: true,
-      forChris: false,
+      forChris: true,
+      highlight: false,
     };
     dispatch(updateJob(id, good));
     navigate(PATH_DASHBOARD.general.app);
@@ -60,7 +61,7 @@ export default function EcommerceProductDetails() {
           variant="contained"
           sx={{ my: "20px" }}
         >
-          Back Button
+          Home Button
         </Button>
         {job && !isLoading && (
           <>

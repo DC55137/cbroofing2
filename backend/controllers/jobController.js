@@ -43,7 +43,7 @@ const newJob = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create single Job
-// @route   Post /api/job/
+// @route   PUT /api/job/
 // @access  Public
 const updateJob = asyncHandler(async (req, res) => {
   const { id } = req.query;
@@ -52,7 +52,6 @@ const updateJob = asyncHandler(async (req, res) => {
     new: true,
     useFindAndModify: false,
   });
-  job.forChris = false;
   await job.save();
   if (!job) {
     throw new expressError("Job not found", 404);

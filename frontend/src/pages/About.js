@@ -1,6 +1,6 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import { Divider, Grid, Container } from "@mui/material";
+import { Divider, Container } from "@mui/material";
 // components
 import Page from "../components/Page";
 import { AboutHero, AboutWhat, AboutTestimonials } from "../sections/about";

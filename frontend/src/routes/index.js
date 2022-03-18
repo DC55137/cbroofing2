@@ -77,10 +77,10 @@ export default function Router() {
               element: <Navigate to="/dashboard/jobs" replace />,
               index: true,
             },
-            { path: "all", element: <JobList /> },
-            { path: "lead", element: <JobList /> },
-            { path: "inspect", element: <JobList /> },
+            { path: "lead", element: <JobLeads /> },
+            { path: "inspect", element: <JobInspect /> },
             { path: "schedule", element: <JobList /> },
+            { path: "discuss", element: <JobDiscuss /> },
           ],
         },
         {
@@ -184,6 +184,13 @@ const UserCreate = Loadable(
   lazy(() => import("../pages/dashboard/UserCreate"))
 );
 const JobList = Loadable(lazy(() => import("../pages/dashboard/JobList")));
+const JobLeads = Loadable(lazy(() => import("../pages/dashboard/JobLeads")));
+const JobDiscuss = Loadable(
+  lazy(() => import("../pages/dashboard/JobDiscuss"))
+);
+const JobInspect = Loadable(
+  lazy(() => import("../pages/dashboard/JobInspect"))
+);
 
 // Main
 const HomePage = Loadable(lazy(() => import("../pages/Home")));
