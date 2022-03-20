@@ -99,6 +99,16 @@ export default function EcommerceProductDetails() {
                       display: "block",
                     }}
                   >
+                    {job.mobile}
+                  </Typography>
+                  <Typography
+                    variant="overline"
+                    sx={{
+                      mt: 2,
+                      mb: 1,
+                      display: "block",
+                    }}
+                  >
                     Job Number
                   </Typography>
                   <Typography
