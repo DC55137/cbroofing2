@@ -12,8 +12,7 @@ import {
   Container,
   Typography,
   TableContainer,
-  Grid,
-  CardActionArea,
+  Button,
 } from "@mui/material";
 
 // hooks
@@ -31,8 +30,6 @@ import { getJobs } from "../../redux/slices/jobs";
 // sections
 import { UserListHead } from "../../sections/@dashboard/user/list";
 
-import { AppWidgetSummary } from "../../sections/@dashboard/general/app";
-
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
@@ -48,13 +45,7 @@ const TABLE_HEAD = [
 export default function UserList() {
   const dispatch = useDispatch();
 
-  const { jobs, isLoading } = useSelector((state) => state.jobs);
-  const leads = jobs.filter(
-    (job) => job.stage === "lead" && !job.discuss && job.highlight
-  );
-  const highlights = jobs.filter((job) => job.highlight);
-  const inspect = jobs.filter((job) => job.stage === "inspect" && !job.discuss);
-  const discuss = jobs.filter((job) => job.discuss);
+  const { jobSearch, isLoading } = useSelector((state) => state.jobs);
 
   useEffect(() => {
     dispatch(getJobs());
@@ -65,23 +56,27 @@ export default function UserList() {
   return (
     <Page title="User: List">
       <Container maxWidth={themeStretch ? false : "lg"}>
+        <Button
+          to={`/dashboard/app`}
+          component={RouterLink}
+          size="large"
+          variant="contained"
+          sx={{ my: "20px" }}
+        >
+          Home Button
+        </Button>
         {isLoading ? (
           <h1>Loading... Just wait 2 sec Chris</h1>
         ) : (
           <>
-            <Typography variant="h2" noWrap>
-              highlights
-            </Typography>
-            <Typography variant="subtitle2" noWrap>
-              This are the jobs that I need you to look at the most urgently
-            </Typography>
+            <h1>Search</h1>
             <Card>
               <Scrollbar>
                 <TableContainer sx={{ minWidth: 800 }}>
                   <Table>
                     <UserListHead headLabel={TABLE_HEAD} />
                     <TableBody>
-                      {highlights.map((row) => {
+                      {jobSearch.map((row) => {
                         const { _id, stage, name, mobile, email, address } =
                           row;
                         return (
@@ -90,10 +85,7 @@ export default function UserList() {
                             key={_id}
                             to={`/dashboard/job/${_id}`}
                             component={RouterLink}
-                            sx={{
-                              textDecoration: "none",
-                              background: "yellow",
-                            }}
+                            sx={{ textDecoration: "none" }}
                           >
                             <TableCell
                               sx={{ display: "flex", alignItems: "center" }}
@@ -114,39 +106,9 @@ export default function UserList() {
                 </TableContainer>
               </Scrollbar>
             </Card>
-            <Grid container spacing={3} sx={{ my: 5 }}>
-              <Grid item xs={12} md={4}>
-                <CardActionArea
-                  to={`/dashboard/jobs/lead`}
-                  component={RouterLink}
-                >
-                  <AppWidgetSummary title="Sent" total={leads.length} />
-                </CardActionArea>
-              </Grid>
-
-              <Grid item xs={12} md={4}>
-                <CardActionArea
-                  to={`/dashboard/jobs/inspect`}
-                  component={RouterLink}
-                >
-                  <AppWidgetSummary title="Inspect" total={inspect.length} />
-                </CardActionArea>
-              </Grid>
-
-              <Grid item xs={12} md={4}>
-                <CardActionArea
-                  to={`/dashboard/jobs/discuss`}
-                  component={RouterLink}
-                >
-                  <AppWidgetSummary title="To Discuss" total={discuss.length} />
-                </CardActionArea>
-              </Grid>
-            </Grid>
           </>
         )}
       </Container>
     </Page>
   );
 }
-
-// ----------------------------------------------------------------------

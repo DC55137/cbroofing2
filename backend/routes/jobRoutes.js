@@ -8,6 +8,6 @@ import {
 } from "../controllers/jobController.js";
 
 router.route("/").get(getJobs).post(newJob).put(updateJob);
-router.route("/:id").get(getJobById).put(updateJob);
+router.route("/id").get(getJobById).put(updateJob);
 
 export default router;

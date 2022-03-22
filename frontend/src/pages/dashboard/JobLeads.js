@@ -47,7 +47,9 @@ export default function UserList() {
   const dispatch = useDispatch();
 
   const { jobs, isLoading } = useSelector((state) => state.jobs);
-  const leads = jobs.filter((job) => job.stage === "lead" && !job.discuss);
+  const leads = jobs.filter(
+    (job) => job.stage === "lead" && !job.discuss && !job.highlight
+  );
 
   useEffect(() => {
     dispatch(getJobs());
@@ -57,10 +59,7 @@ export default function UserList() {
 
   return (
     <Page title="User: List">
-      <Container
-        maxWidth={themeStretch ? false : "lg"}
-        style={{ marginTop: "200px" }}
-      >
+      <Container maxWidth={themeStretch ? false : "lg"}>
         <Button
           to={`/dashboard/app`}
           component={RouterLink}
@@ -74,7 +73,7 @@ export default function UserList() {
           <h1>Loading... Just wait 2 sec Chris</h1>
         ) : (
           <>
-            <h1>Leads</h1>
+            <h1>Sent</h1>
             <Card>
               <Scrollbar>
                 <TableContainer sx={{ minWidth: 800 }}>

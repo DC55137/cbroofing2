@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { Navigate, useRoutes, useLocation } from "react-router-dom";
 // layouts
 import MainLayout from "../layouts/main";
+import DashboardLayout from "../layouts/dashboard";
 import LogoOnlyLayout from "../layouts/LogoOnlyLayout";
 // guards
 import GuestGuard from "../guards/GuestGuard";
@@ -60,7 +61,7 @@ export default function Router() {
       path: "dashboard",
       element: (
         <AuthGuard>
-          <MainLayout />
+          <DashboardLayout />
         </AuthGuard>
       ),
       children: [
@@ -81,6 +82,7 @@ export default function Router() {
             { path: "inspect", element: <JobInspect /> },
             { path: "schedule", element: <JobList /> },
             { path: "discuss", element: <JobDiscuss /> },
+            { path: "search", element: <JobSearch /> },
           ],
         },
         {
@@ -176,6 +178,7 @@ const UserProfile = Loadable(
   lazy(() => import("../pages/dashboard/UserProfile"))
 );
 const UserCards = Loadable(lazy(() => import("../pages/dashboard/UserCards")));
+
 const UserList = Loadable(lazy(() => import("../pages/dashboard/UserList")));
 const UserAccount = Loadable(
   lazy(() => import("../pages/dashboard/UserAccount"))
@@ -185,6 +188,7 @@ const UserCreate = Loadable(
 );
 const JobList = Loadable(lazy(() => import("../pages/dashboard/JobList")));
 const JobLeads = Loadable(lazy(() => import("../pages/dashboard/JobLeads")));
+const JobSearch = Loadable(lazy(() => import("../pages/dashboard/JobSearch")));
 const JobDiscuss = Loadable(
   lazy(() => import("../pages/dashboard/JobDiscuss"))
 );

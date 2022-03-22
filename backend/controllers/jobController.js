@@ -59,4 +59,37 @@ const updateJob = asyncHandler(async (req, res) => {
   res.status(201).json(job);
 });
 
-export { getJobs, getJobById, newJob, updateJob };
+// @desc    Search for job
+// @route   GET /api/job/search
+// @access  Public
+
+const searchJob = asyncHandler(async (req, res, next) => {
+  const { search } = req.query;
+
+  const jobs = await Job.find({
+    $and: [
+      {
+        $or: [
+          {
+            address: { $regex: new RegExp(search), $options: "i" },
+          },
+          {
+            name: { $regex: new RegExp(search), $options: "i" },
+          },
+          {
+            mobile: { $regex: new RegExp(search), $options: "i" },
+          },
+        ],
+      },
+    ],
+  });
+  if (jobs) {
+    res.json(jobs);
+  } else {
+    res.status(404);
+    console.log("job not found");
+    throw new Error("job not found");
+  }
+});
+
+export { getJobs, getJobById, newJob, updateJob, searchJob };

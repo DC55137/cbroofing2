@@ -57,10 +57,7 @@ export default function UserList() {
 
   return (
     <Page title="User: List">
-      <Container
-        maxWidth={themeStretch ? false : "lg"}
-        style={{ marginTop: "200px" }}
-      >
+      <Container maxWidth={themeStretch ? false : "lg"}>
         <Button
           to={`/dashboard/app`}
           component={RouterLink}

@@ -8,6 +8,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
 import jobRoutes from "./routes/jobRoutes.js";
 import colors from "colors";
+import { searchJob } from "./controllers/jobController.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use(cors()); // Use this after the variable declaration
 
 app.use("/api/galleries", galleryRoutes);
 app.use("/api/jobs", jobRoutes);
+app.get("/api/search", searchJob);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));

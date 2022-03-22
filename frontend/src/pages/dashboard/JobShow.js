@@ -46,6 +46,7 @@ export default function EcommerceProductDetails() {
       discuss: true,
       forChris: true,
       highlight: false,
+      stage: "lead",
     };
     dispatch(updateJob(id, good));
     navigate(PATH_DASHBOARD.general.app);
@@ -53,13 +54,12 @@ export default function EcommerceProductDetails() {
 
   return (
     <Page title="Job: Show">
-      <Container maxWidth={themeStretch ? false : "lg"} sx={{ mt: "120px" }}>
+      <Container maxWidth={themeStretch ? false : "lg"}>
         <Button
           to={`/dashboard/app`}
           component={RouterLink}
           size="large"
           variant="contained"
-          sx={{ my: "20px" }}
         >
           Home Button
         </Button>

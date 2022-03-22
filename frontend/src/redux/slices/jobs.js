@@ -11,6 +11,7 @@ const initialState = {
   isLoading: false,
   error: null,
   jobs: [],
+  jobSearch: [],
   job: null,
   newJob: null,
   sortBy: null,
@@ -41,6 +42,11 @@ const slice = createSlice({
       state.isLoading = false;
       state.job = action.payload;
     },
+    // GET SEARCH PRODUCTS
+    getJobSearchSuccess(state, action) {
+      state.isLoading = false;
+      state.jobSearch = action.payload;
+    },
 
     // CREATE JOB
     createJobSuccess(state, action) {
@@ -62,6 +68,7 @@ export const {
   startLoading,
   hasError,
   getJobSuccess,
+  getJobSearchSuccess,
   getJobsSuccess,
   createJobSuccess,
 } = slice.actions;
@@ -89,6 +96,19 @@ export function getJob(id) {
         params: { id },
       });
       dispatch(slice.actions.getJobSuccess(response.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+export function searchJob(search) {
+  return async () => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.get("/api/search", {
+        params: { search },
+      });
+      dispatch(slice.actions.getJobSearchSuccess(response.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
