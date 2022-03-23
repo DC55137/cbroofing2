@@ -50,7 +50,7 @@ export default function UserList() {
 
   const { jobs, isLoading } = useSelector((state) => state.jobs);
   const leads = jobs.filter(
-    (job) => job.stage === "lead" && !job.discuss && job.highlight
+    (job) => job.stage === "lead" && !job.discuss && !job.highlight
   );
   const highlights = jobs.filter((job) => job.highlight);
   const inspect = jobs.filter((job) => job.stage === "inspect" && !job.discuss);
@@ -92,7 +92,6 @@ export default function UserList() {
                             component={RouterLink}
                             sx={{
                               textDecoration: "none",
-                              background: "yellow",
                             }}
                           >
                             <TableCell
