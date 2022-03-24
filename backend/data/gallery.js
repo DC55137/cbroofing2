@@ -1,6 +1,22 @@
 const gallery = [
   {
     cover:
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091455/cbroofing/Gallery/Inala/7652474c-6a71-4c46-bfc1-ee36bbdf2bb1_ubkcho.jpg",
+    images: [
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091456/cbroofing/Gallery/Inala/8ecd43f3-7d09-483e-8559-f2d51f7a7530_y2vk0o.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091455/cbroofing/Gallery/Inala/7652474c-6a71-4c46-bfc1-ee36bbdf2bb1_ubkcho.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091455/cbroofing/Gallery/Inala/665ea8bd-2ce5-4dc9-b4cc-4392bccc6ae2_qnip8c.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091455/cbroofing/Gallery/Inala/923a9547-f71d-4675-a150-af0160a00e8d_syboxr.jpg",
+    ],
+    location: "Inala",
+    date: "24/03/22",
+    duration: 2,
+    description: "Asbestos Roof Replacement",
+    recap:
+      "It's great when everthing goes to plan. Was able to get the roof off and install the new roof on the same day. Very happy with the hard work done by the team.",
+  },
+  {
+    cover:
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979416/cbroofing/Gallery/Mermaid%20Beach/1f9f4a5c-1381-48a8-b6aa-b77cc271b1e9_gnfnjv.jpg",
     images: [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1646979419/cbroofing/Gallery/Mermaid%20Beach/2a76521d-f866-4652-a3c7-f29de7fe42b2_hkxqyc.jpg",
