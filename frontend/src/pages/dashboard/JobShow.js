@@ -1,8 +1,15 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // @mui
-import { Card, Grid, Container, Typography, Button } from "@mui/material";
+import {
+  Card,
+  Grid,
+  Container,
+  Typography,
+  Button,
+  Input,
+} from "@mui/material";
 // redux
 import { useDispatch, useSelector } from "../../redux/store";
 import { getJob, startLoading, updateJob } from "../../redux/slices/jobs";
@@ -20,6 +27,8 @@ import { PATH_DASHBOARD } from "../../routes/paths";
 // ----------------------------------------------------------------------
 
 export default function EcommerceProductDetails() {
+  const [notes, setNotes] = useState("");
+
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,6 +46,8 @@ export default function EcommerceProductDetails() {
     let good = {
       good: true,
       forChris: false,
+      highlight: false,
+      notesChris: notes,
     };
     dispatch(updateJob(id, good));
     navigate(PATH_DASHBOARD.general.app);
@@ -46,6 +57,7 @@ export default function EcommerceProductDetails() {
       discuss: true,
       forChris: true,
       highlight: false,
+      notesChris: notes,
       stage: "lead",
     };
     dispatch(updateJob(id, good));
@@ -160,6 +172,18 @@ export default function EcommerceProductDetails() {
                 </Grid>
               </Grid>
             </Card>
+            <Grid container>
+              <Grid item xs={12} md={12} lg={12}>
+                <Input
+                  autoFocus
+                  fullWidth
+                  disableUnderline
+                  multiline={true}
+                  placeholder="Notes"
+                  onChange={(event) => setNotes(event.target.value)}
+                />
+              </Grid>
+            </Grid>
           </>
         )}
 

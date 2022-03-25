@@ -27,6 +27,7 @@ const jobSchema = new mongoose.Schema({
   address: String,
   email: String,
   notes: String,
+  notesChris: String,
   date: {
     type: Date,
     default: Date.now,
