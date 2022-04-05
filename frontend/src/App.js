@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 // routes
 import Router from "./routes";
 // theme
@@ -12,9 +13,19 @@ import ThemeColorPresets from "./components/ThemeColorPresets";
 import ThemeLocalization from "./components/ThemeLocalization";
 import MotionLazyContainer from "./components/animate/MotionLazyContainer";
 
+//Google Analytics
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "UA-179143437-1"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 // ----------------------------------------------------------------------
 
 export default function App() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <ThemeProvider>
       <ThemeColorPresets>
