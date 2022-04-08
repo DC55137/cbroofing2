@@ -1,5 +1,13 @@
 export const testimonialData = [
   {
+    name: "Emman, Inala",
+    content:
+      "Chris Board Metal Roofing were great to work with. They removed our asbestos roof and replaced it with a Colorbond roof. They were inexpensive comparative to others. Their quality of work was great and done in a timely manner! Daniel, in particular, was great to work with regarding getting the project sorted, answering questions, and keeping in touch with me throughout the process. He was both professional and personable. Thanks heaps to Chris Board and the employees. Job well done!",
+    highlight: "Job well done!!!",
+    dateCreate: "April 8, 2022",
+    rating: 5,
+  },
+  {
     name: "Paul, Nerang",
     content:
       "Genuinely the best value service on the coast. Chris Board Metal Roofing provided an asbestos roof removal and installation of a new metal roof and the finished work is absolute top notch. 100% recommend",
