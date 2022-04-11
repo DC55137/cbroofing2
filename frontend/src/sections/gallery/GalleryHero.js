@@ -15,7 +15,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundImage:
-    "url(https://minimal-assets-api.vercel.app/assets/overlay.svg), url(https://res.cloudinary.com/dddxwdp7v/image/upload/v1644287825/cbroofing/homeImages/carousel9_rhludc.jpg)",
+    "url(https://minimals.cc/assets/overlay.svg), url(https://res.cloudinary.com/dddxwdp7v/image/upload/v1644287825/cbroofing/homeImages/carousel9_rhludc.jpg)",
   padding: theme.spacing(10, 0),
   [theme.breakpoints.up("md")]: {
     height: 560,

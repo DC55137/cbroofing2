@@ -1,6 +1,31 @@
 const gallery = [
   {
     cover:
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639802/cbroofing/Gallery/Tweed%20Heads/IMG_4470_lhb4km.jpg",
+    images: [
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639840/cbroofing/Gallery/Tweed%20Heads/IMG_4450_wesdrh.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639840/cbroofing/Gallery/Tweed%20Heads/IMG_4450_wesdrh.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639830/cbroofing/Gallery/Tweed%20Heads/IMG_4451_sn5y4a.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639822/cbroofing/Gallery/Tweed%20Heads/IMG_4447_fxxpyc.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639817/cbroofing/Gallery/Tweed%20Heads/IMG_4440_ycaxs5.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639816/cbroofing/Gallery/Tweed%20Heads/IMG_4448_i2xjhd.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639804/cbroofing/Gallery/Tweed%20Heads/IMG_4460_vuvh5t.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639802/cbroofing/Gallery/Tweed%20Heads/IMG_4470_lhb4km.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639801/cbroofing/Gallery/Tweed%20Heads/IMG_4432_eg3mnd.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639796/cbroofing/Gallery/Tweed%20Heads/IMG_4455_jgax1m.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639790/cbroofing/Gallery/Tweed%20Heads/IMG_4454_omnem3.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639786/cbroofing/Gallery/Tweed%20Heads/IMG_4449_q2r9va.jpg",
+    ],
+    location: "Tweed",
+    review: "",
+    date: "04/04/22",
+    duration: 5,
+    description: "Decramastic Roof Replacement",
+    recap:
+      "The infamous Decramastic Roof. Very difficult to repair and a headache for home owners. Leaks are very difficult to find and damaged can occur to the roof quite easily. The difference between decramastic and colorbond roofs speak for themselves. Previous skylights looked like the had been completed rusted out in certain areas, the dry pan flashings and the new roof install will give the home owners a sense of comfort, knowing that their home is protected with the highest quality material and worksmanship. The team did a great job with this project. Very happy with the results. ",
+  },
+  {
+    cover:
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091455/cbroofing/Gallery/Inala/7652474c-6a71-4c46-bfc1-ee36bbdf2bb1_ubkcho.jpg",
     images: [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091456/cbroofing/Gallery/Inala/8ecd43f3-7d09-483e-8559-f2d51f7a7530_y2vk0o.jpg",
@@ -9,6 +34,8 @@ const gallery = [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1648091455/cbroofing/Gallery/Inala/923a9547-f71d-4675-a150-af0160a00e8d_syboxr.jpg",
     ],
     location: "Inala",
+    review:
+      "Chris Board Metal Roofing were great to work with. They removed our asbestos roof and replaced it with a Colorbond roof. They were inexpensive comparative to others. Their quality of work was great and done in a timely manner! Daniel, in particular, was great to work with regarding getting the project sorted, answering questions, and keeping in touch with me throughout the process. He was both professional and personable. Thanks heaps to Chris Board and the employees. Job well done!",
     date: "24/03/22",
     duration: 2,
     description: "Asbestos Roof Replacement",
