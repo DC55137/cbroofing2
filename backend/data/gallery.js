@@ -1,6 +1,30 @@
 const gallery = [
   {
     cover:
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037775/cbroofing/Gallery/Southport2/IMG_4531_tzq37d.jpg",
+    images: [
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037827/cbroofing/Gallery/Southport2/IMG_4516_mu16ix.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037819/cbroofing/Gallery/Southport2/IMG_4525_utpiwi.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037811/cbroofing/Gallery/Southport2/IMG_4517_qjfq52.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037805/cbroofing/Gallery/Southport2/IMG_4530_bygphm.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037788/cbroofing/Gallery/Southport2/IMG_4527_ygg40x.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037775/cbroofing/Gallery/Southport2/IMG_4531_tzq37d.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037762/cbroofing/Gallery/Southport2/IMG_4528_o9jx65.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037760/cbroofing/Gallery/Southport2/IMG_4529_vcvgkn.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037754/cbroofing/Gallery/Southport2/IMG_4526_xbllma.jpg",
+      "https://res.cloudinary.com/dddxwdp7v/image/upload/v1651037753/cbroofing/Gallery/Southport2/IMG_4532_yauehm.jpg",
+    ],
+    location: "Southport",
+    review:
+      "CBMR Were very professional with great communication. We are also extremely impressed with the final outcome. Thank u team CBMR",
+    date: "12/04/22",
+    duration: 3,
+    description: "Tile Roof Replacement",
+    recap:
+      "It's CBMR's opinion that metal roofs are a must for the Australian home. This week CBMR did a tile roof replacement. It can be a lot of work removing the heavy tiles from the roof. Tough job for the crew, but they were able to get the old roof off and the new roof on in the same day. The best way to ensure the house is protected from the rain during installation. The new roof was secured with cyclone straps as all tiled to tin roofs must be. It was a pleasure to work with this friendly couple.",
+  },
+  {
+    cover:
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639802/cbroofing/Gallery/Tweed%20Heads/IMG_4470_lhb4km.jpg",
     images: [
       "https://res.cloudinary.com/dddxwdp7v/image/upload/v1649639840/cbroofing/Gallery/Tweed%20Heads/IMG_4450_wesdrh.jpg",

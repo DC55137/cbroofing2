@@ -20,6 +20,19 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+// Ensure https is used on heroku
+var forceSsl = function (req, res, next) {
+  if (req.headers["x-forwarded-proto"] !== "https") {
+    return res.redirect(["https://", req.get("Host"), req.url].join(""));
+  }
+  return next();
+};
+
+if (process.env.NODE_ENV === "production") {
+  app.use(forceSsl);
+  // additional prod environemtn configuration
+}
+
 app.use(express.json());
 app.use(cors()); // Use this after the variable declaration
 
