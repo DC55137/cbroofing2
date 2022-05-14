@@ -11,6 +11,8 @@ import {
   AsbestosElement,
 } from "../sections/home";
 
+import useRedirectToHttps from "../hooks/useRedirectToHttps";
+
 // ----------------------------------------------------------------------
 
 const RootStyle = styled("div")(() => ({
@@ -26,6 +28,7 @@ const ContentStyle = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function HomePage() {
+  useRedirectToHttps();
   return (
     <Page title="CBMR | Gold Coast Brisbane Metal Roofing">
       <RootStyle>
